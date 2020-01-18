@@ -1,0 +1,411 @@
+// out: css/index.css, compress: true, strictMath: true
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-family: Arial;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+.wrapper {
+    width: 100%;
+}
+
+.top {
+    background-color: #60696e;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+
+    p a {
+        color: #fff;
+        font-size: 1.5em;
+    }
+
+    p a:hover {
+        color: #a8b3c2;
+    }
+}
+
+
+.logo {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+.main-menu {
+    display: none;
+}
+
+.active {
+    background-color: rgb(196, 207, 214);
+}
+
+.main-menu li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    font-family: Arial;
+    font-size: 1.3em;
+}
+
+.main-menu li a {
+    color: #fff;
+    padding-left: 10px;
+}
+
+.main-menu a:hover {
+    text-decoration: underline;
+    background-color: grey;
+    width: 100%;
+}
+
+.toggle-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    /* не забываем явно указать каким должен быть курсор */
+    cursor: pointer;
+    color: #4d5f8b;
+
+}
+
+.toggle-button:after {
+    /* получаем данные из атрибута data-open в html */
+    content: attr(data-open);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    padding: 10px 30px;
+}
+
+#menu-checkbox:checked + nav[role="navigation"] .main-menu {
+    /* когда чекбокс активен меню становится видимым */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#menu-checkbox:checked + nav[role="navigation"] .toggle-button:after {
+    content: attr(data-close);
+}
+
+
+
+
+
+section .slider {
+    width: 100%;
+
+    img {
+        max-width: 100%;
+        max-height: auto;
+    }
+
+    h1 {
+        position: relative;
+        text-align: right;
+        bottom: 40px;
+        right: 20px;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 1px 1px 2px black, 0 0 1em grey;
+    }
+}
+
+.middle {
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+
+    h2,
+    h3 {
+        font-weight: bold;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .center {
+        width: 100%;
+
+        .news {
+            width: 100%;
+
+            .item {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+
+                h3 {
+                    width: 100%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                .seredina {
+                    width: 100%;
+                    display: flex;
+
+                    img {
+                        max-width: 150px;
+                        max-height: auto;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+@media screen and (min-width: 1200px) {
+
+    .top {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .logo {
+        margin-left: 30px;
+        margin-top: 35px;
+    }
+
+
+    header nav {
+        position: absolute;
+        top: 85px;
+        right: 100px;
+        width: 70%;
+
+        .main-menu li a {
+            color: #60696e;
+        }
+    }
+
+
+    .toggle-button {
+        /* label скрыт */
+        display: none;
+    }
+
+    .main-menu {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        height: 50px;
+        justify-content: flex-end;
+    }
+
+    .main-menu li {
+        /* теги <li> расположены в ряд */
+        width: calc(100% / 7);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .main-menu a {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        font-size: 1em;
+        text-decoration: none;
+        color: #4d5f8b;
+        text-transform: capitalize;
+        border-bottom: 0;
+    }
+
+    .main-menu a:hover {
+        background: none;
+        text-decoration: none;
+        color: #97a2be;
+    }
+
+    nav .active {
+        background: none;
+        border-bottom: 4px solid #60696e;
+
+    }
+
+
+
+    section .slider {
+        margin-top: 50px;
+
+        h1 {
+            position: relative;
+            text-align: right;
+            bottom: 200px;
+            right: 50px;
+            font-size: 3em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px black, 0 0 1em grey;
+        }
+    }
+
+
+
+
+}
